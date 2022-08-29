@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.tibco.com/ES_TS_MakePayment/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ES_TS_MakePayment" targetNamespace="http://www.tibco.com/ES_TS_MakePayment/" xmlns:xsd1="http://www.EniqueSolutions.com/BW6Training/Es_Ts_Payment">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.tibco.com/ES_TS_MakePayment/">
+      <xsd:element name="MakePayment">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="MakePaymentResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.EniqueSolutions.com/BW6Training/Es_Ts_Payment"
+    		schemaLocation="../Schemas/Es_Ts_Payment.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="MakePaymentRequest">
+    <wsdl:part element="xsd1:MakePaymentReq" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="MakePaymentResponse">
+    <wsdl:part element="xsd1:MakePaymentRes" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="ES_TS_MakePayment">
+    <wsdl:operation name="MakePayment">
+      <wsdl:input message="tns:MakePaymentRequest"/>
+      <wsdl:output message="tns:MakePaymentResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ES_TS_MakePaymentSOAP" type="tns:ES_TS_MakePayment">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="MakePayment">
+      <soap:operation soapAction="http://www.tibco.com/ES_TS_MakePayment/MakePayment"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ES_TS_MakePayment">
+    <wsdl:port binding="tns:ES_TS_MakePaymentSOAP" name="ES_TS_MakePaymentSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

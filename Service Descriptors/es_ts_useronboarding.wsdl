@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.EniqueSolutions.com/BW6Training/es_ts_useronboarding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="es_ts_useronboarding" targetNamespace="http://www.EniqueSolutions.com/BW6Training/es_ts_useronboarding/" xmlns:xsd1="http://www.EniqueSolutions.com/BW6Training/ECommerce" xmlns:xsd2="http://www.example.org/FaultSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.EniqueSolutions.com/BW6Training/es_ts_useronboarding/">
+      <xsd:element name="CreateAccount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateAccountResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateAccount">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateAccountResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAccount">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAccountResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeactivateAccount">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeactivateAccountResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateAccountFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="CreateAccountFault"
+      				type="xsd:string">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateAccountFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="UpdateAccountFault"
+      				type="xsd:string">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAccountFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="GetAccountFault"
+      				type="xsd:string">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeactivateAccountFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="DeactivateAccountFault"
+      				type="xsd:string">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.EniqueSolutions.com/BW6Training/ECommerce"
+    		schemaLocation="../Schemas/ECommerce.xsd">
+    	</xsd:import>
+    	<xsd:import namespace="http://www.example.org/FaultSchema"
+    		schemaLocation="../Schemas/FaultSchema.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="CreateAccountRequest">
+    <wsdl:part element="xsd1:CreateAccountReq" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CreateAccountResponse">
+    <wsdl:part element="xsd1:CreateAccountRes" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountRequest">
+  	<wsdl:part name="parameters" element="xsd1:UpdateAccountReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountResponse">
+  	<wsdl:part name="parameters" element="xsd1:UpdateAccountRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAccountRequest">
+  	<wsdl:part name="parameters" element="xsd1:GetAccountDetailReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAccountResponse">
+  	<wsdl:part name="parameters" element="xsd1:GetAccountRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeactivateAccountRequest">
+  	<wsdl:part name="parameters" element="xsd1:DeactiveAccountReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeactivateAccountResponse">
+  	<wsdl:part name="parameters" element="xsd1:DeactiveAccountRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CreateAccountFault">
+  	<wsdl:part name="parameters" element="xsd2:FaultSchema"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountFault">
+  	<wsdl:part name="parameters" element="xsd2:FaultSchema"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAccountFault">
+  	<wsdl:part name="parameters" element="xsd2:FaultSchema"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeactivateAccountFault">
+  	<wsdl:part name="parameters" element="xsd2:FaultSchema"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="es_ts_useronboarding">
+    <wsdl:operation name="CreateAccount">
+      <wsdl:input message="tns:CreateAccountRequest"/>
+      <wsdl:output message="tns:CreateAccountResponse"/>
+            <wsdl:fault name="fault" message="tns:CreateAccountFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+    	<wsdl:input message="tns:UpdateAccountRequest"></wsdl:input>
+    	<wsdl:output message="tns:UpdateAccountResponse"></wsdl:output>
+            <wsdl:fault name="fault" message="tns:UpdateAccountFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+    	<wsdl:input message="tns:GetAccountRequest"></wsdl:input>
+    	<wsdl:output message="tns:GetAccountResponse"></wsdl:output>
+            <wsdl:fault name="fault" message="tns:GetAccountFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="DeactivateAccount">
+    	<wsdl:input message="tns:DeactivateAccountRequest"></wsdl:input>
+    	<wsdl:output message="tns:DeactivateAccountResponse"></wsdl:output>
+            <wsdl:fault name="fault" message="tns:DeactivateAccountFault"></wsdl:fault>
+        </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="es_ts_useronboardingSOAP" type="tns:es_ts_useronboarding">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreateAccount">
+      <soap:operation soapAction="http://www.EniqueSolutions.com/BW6Training/es_ts_useronboarding/CreateAccount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="es_ts_useronboarding">
+    <wsdl:port binding="tns:es_ts_useronboardingSOAP" name="es_ts_useronboardingSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

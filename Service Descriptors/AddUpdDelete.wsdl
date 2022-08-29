@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.EniqueSolutions.com/BW6Training/AddUpdDelete/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AddUpdDelete" targetNamespace="http://www.EniqueSolutions.com/BW6Training/AddUpdDelete/" xmlns:xsd1="http://www.EniqueSolutions.com/BW6Training/ES_BS_ProductManagement">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.EniqueSolutions.com/BW6Training/AddUpdDelete/">
+      <xsd:element name="AddProducts">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddProductsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateProducts">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateProductsResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteProducts">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteProductsResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.EniqueSolutions.com/BW6Training/ES_BS_ProductManagement"
+    		schemaLocation="../Schemas/ES_BS_ProductManagement.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="AddProductsRequest">
+    <wsdl:part element="xsd1:AddProductsReq" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AddProductsResponse">
+    <wsdl:part element="xsd1:AddProductsRes" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateProductsRequest">
+  	<wsdl:part name="parameters" element="xsd1:AddProductsReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateProductsResponse">
+  	<wsdl:part name="parameters" element="xsd1:UpdateProductRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteProductsRequest">
+  	<wsdl:part name="parameters" element="xsd1:AddProductsReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteProductsResponse">
+  	<wsdl:part name="parameters" element="xsd1:DeleteProductRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AddUpdDelete">
+    <wsdl:operation name="AddProducts">
+      <wsdl:input message="tns:AddProductsRequest"/>
+      <wsdl:output message="tns:AddProductsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProducts">
+    	<wsdl:input message="tns:UpdateProductsRequest"></wsdl:input>
+    	<wsdl:output message="tns:UpdateProductsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProducts">
+    	<wsdl:input message="tns:DeleteProductsRequest"></wsdl:input>
+    	<wsdl:output message="tns:DeleteProductsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AddUpdDeleteSOAP" type="tns:AddUpdDelete">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddProducts">
+      <soap:operation soapAction="http://www.EniqueSolutions.com/BW6Training/AddUpdDelete/AddProducts"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AddUpdDelete">
+    <wsdl:port binding="tns:AddUpdDeleteSOAP" name="AddUpdDeleteSOAP">
+      <soap:address location="http://www.EniqueSolutions.com/BW6Training/AddUpdDelete"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

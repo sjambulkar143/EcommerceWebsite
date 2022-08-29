@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.EniqueSolutions.com/BW6Training/ES_TS_OrderManagement" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.EniqueSolutions.com/BW6Training/ES_TS_OrderManagement">
+
+    <complexType name="CreateOrderReqType">
+    	<sequence>
+    		<element ref="tns:Order_ID"></element>
+    		<element ref="tns:CUSTOMER_ID"></element>
+    		<element ref="tns:PRODUCT_ID"></element>
+    		<element ref="tns:QUANTITY"></element>
+    		<element ref="tns:LIST_PRICE"></element>
+    		<element ref="tns:DISCOUNT"></element>
+    		<element ref="tns:ORDER_STATUS"></element>
+    		<element ref="tns:ORDER_DATE"></element>
+    		<element ref="tns:REQUIRED_DATE"></element>
+    		<element ref="tns:SHIPPED_DATE"></element>
+    		<element name="SessionID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Order_ID" type="string"></element>
+
+    <element name="CUSTOMER_ID" type="string"></element>
+
+    <element name="PRODUCT_ID" type="string"></element>
+
+    <element name="QUANTITY" type="string"></element>
+
+    <element name="LIST_PRICE" type="string"></element>
+
+    <element name="DISCOUNT" type="string"></element>
+
+    <element name="ORDER_STATUS" type="string"></element>
+
+    <element name="ORDER_DATE" type="string"></element>
+
+    <element name="REQUIRED_DATE" type="string"></element>
+
+    <element name="SHIPPED_DATE" type="string"></element>
+
+    <complexType name="CreateOrderResType">
+    	<sequence>
+    		<element ref="tns:ResponseMessage"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ResponseMessage" type="string"></element>
+
+    <element name="CreateOrderReq" type="tns:CreateOrderReqType"></element>
+
+    <element name="CreateOrderRes" type="tns:CreateOrderResType"></element>
+
+    <complexType name="UpdateOrderReqType">
+    	<sequence>
+    		<element ref="tns:Order_ID"></element>
+    		<element ref="tns:CUSTOMER_ID"></element>
+    		<element ref="tns:PRODUCT_ID"></element>
+    		<element ref="tns:QUANTITY"></element>
+    		<element ref="tns:LIST_PRICE"></element>
+    		<element ref="tns:DISCOUNT"></element>
+    		<element ref="tns:ORDER_STATUS"></element>
+    		<element ref="tns:ORDER_DATE"></element>
+    		<element ref="tns:REQUIRED_DATE"></element>
+    		<element ref="tns:SHIPPED_DATE"></element>
+    		<element name="SessionID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="UpdateOrderResType">
+    	<sequence>
+    		<element ref="tns:ResponseMessage"></element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="UpdateOrderRes" type="tns:UpdateOrderResType"></element>
+
+    <element name="UpdateOrderReq" type="tns:UpdateOrderReqType"></element>
+
+    <complexType name="CancleOrderReqType">
+    	<sequence>
+    		<element ref="tns:PRODUCT_ID"></element>
+    		<element name="SessionID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="CancleOrderResType">
+    	<sequence>
+    		<element ref="tns:ResponseMessage"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="CancleOrderReq" type="tns:CancleOrderReqType"></element>
+    
+    <element name="CancleOrderRes" type="tns:CancleOrderResType"></element>
+
+    <complexType name="GetOrderReqType">
+    	<sequence>
+    		<element ref="tns:PRODUCT_ID"></element>
+    		<element name="SessionID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="GetOrderResType">
+    	<sequence>
+    		<element ref="tns:Order_ID"></element>
+    		<element ref="tns:CUSTOMER_ID"></element>
+    		<element ref="tns:PRODUCT_ID"></element>
+    		<element ref="tns:QUANTITY"></element>
+    		<element ref="tns:LIST_PRICE"></element>
+    		<element ref="tns:DISCOUNT"></element>
+    		<element ref="tns:ORDER_STATUS"></element>
+    		<element ref="tns:ORDER_DATE"></element>
+    		<element ref="tns:REQUIRED_DATE"></element>
+    		<element ref="tns:SHIPPED_DATE"></element>
+    		<element ref="tns:ResponseMessage"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="GetOrderReq" type="tns:GetOrderReqType"></element>
+    
+    <element name="GetOrderRes" type="tns:GetOrderResType"></element>
+
+    <element name="GetAllOrderRecords" type="string"></element>
+
+    <complexType name="GetOrderHistory">
+    	<sequence>
+    		<element ref="tns:Order_ID" maxOccurs="1" minOccurs="1"></element>
+    		<element ref="tns:CUSTOMER_ID" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element ref="tns:PRODUCT_ID" maxOccurs="1" minOccurs="1"></element>
+    		<element ref="tns:QUANTITY" maxOccurs="1" minOccurs="1"></element>
+    		<element ref="tns:LIST_PRICE" maxOccurs="1" minOccurs="1"></element>
+    		<element ref="tns:DISCOUNT" maxOccurs="1" minOccurs="1"></element>
+    		<element ref="tns:ORDER_STATUS" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element ref="tns:ORDER_DATE" maxOccurs="1" minOccurs="1"></element>
+    		<element ref="tns:REQUIRED_DATE" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element ref="tns:SHIPPED_DATE" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="ResponseMessage" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="GetOrderHistoryResType">
+    	<sequence>
+    		<element name="GetOrderHistory" type="tns:GetOrderHistory" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="GetOrderHistoryRes"
+    	type="tns:GetOrderHistoryResType">
+    </element>
+
+    <complexType name="GetAllHistoryReqType">
+    	<sequence>
+    		<element ref="tns:GetAllOrderRecords"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="GetAllHistoryReq" type="tns:GetAllHistoryReqType"></element>
+</schema>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.EniqueSolutions.com/BW6Training/ES_TS_ShipmentManagement" elementFormDefault="qualified" targetNamespace="http://www.EniqueSolutions.com/BW6Training/ES_TS_ShipmentManagement">
+          
+  
+  
+  <complexType name="TrackShipmentResType">
+                	
+    
+    
+    <sequence>
+          	
+      <element name="Order_ID" type="string"/>
+          	
+      <element name="Product_Name" type="string"/>
+                  
+      <element name="Product_ID" type="string"/>
+                  
+      <element name="Tracking_Code" type="string"/>
+          	
+      <element name="Status" type="string"/>
+          	
+      <element name="Created_At" type="string"/>
+          	
+      <element name="Updated_At" type="string"/>
+          	
+      <element name="Signed_By" type="string"/>
+          	
+      <element name="Product_Weight" type="string"/>
+          	
+      <element name="EST_Delivery_Date" type="string"/>
+          	
+      <element name="ResponseMessage" type="string"/>
+          
+    </sequence>
+      
+  </complexType>
+          
+    
+  
+  
+  <element name="Product_ID" type="string"/>
+          
+  
+  
+  <element name="ResponseMessage" type="string"/>
+          
+  
+  
+  <complexType name="TrackShipmentReqType">
+                	
+    
+    
+    <sequence>
+          	
+      <element name="TRACKING_CODE" type="string"/>
+          
+    </sequence>
+      
+  </complexType>
+          
+  
+  
+  <element name="TrackShipmentReq" type="tns:TrackShipmentReqType"/>
+          
+    
+  
+  
+  <element name="TrackShipmentRes" type="tns:TrackShipmentResType"/>
+    
+    
+
+
+  
+  <element name="UpdateShipmentReq" type="tns:UpdateShipmentReqType"/>
+    
+  <element name="UpdateShipmentRes" type="tns:UpdateShipmentResType"/>
+    
+  <complexType name="UpdateShipmentResType">
+      	
+    <sequence>
+        		
+      <element name="ResponseMessage" type="string"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <complexType name="UpdateShipmentReqType">
+      	
+    <sequence>
+                  
+      <element name="Order_ID" type="string"/>
+                  
+      <element name="Product_Name" type="string"/>
+        		
+      <element name="Product_ID" type="string"/>
+        		
+      <element name="Tracking_Code" type="string"/>
+        		
+      <element name="Status" type="string"/>
+        		
+      <element name="Created_At" type="string"/>
+        		
+      <element name="Updated_At" type="string"/>
+        		
+      <element name="Signed_By" type="string"/>
+        		
+      <element name="Product_Weight" type="string"/>
+        		
+      <element name="Est_Delivery_Date" type="string"/>
+        	
+    </sequence>
+      
+  </complexType>
+      
+  <complexType name="TrackShipmentResArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="TrackShipmentRes" type="tns:TrackShipmentResType"/>
+    </sequence>
+  </complexType>
+      
+  <element name="TrackShipmentResArray" type="tns:TrackShipmentResArray"/>
+  
+</schema>

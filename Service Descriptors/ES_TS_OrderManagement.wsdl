@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.EniqueSolutions.com/BW6Training/ES_TS_OrderManagement/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ES_TS_OrderManagement" targetNamespace="http://www.EniqueSolutions.com/BW6Training/ES_TS_OrderManagement/" xmlns:xsd1="http://www.EniqueSolutions.com/BW6Training/ES_TS_OrderManagement">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.EniqueSolutions.com/BW6Training/ES_TS_OrderManagement/">
+      <xsd:element name="CreateOrder">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CreateOrderResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateOrder">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateOrderResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CancelOrder">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CancelOrderResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetOrder">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetOrderResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetOrderHistory">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetOrderHistoryResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import
+    		namespace="http://www.EniqueSolutions.com/BW6Training/ES_TS_OrderManagement"
+    		schemaLocation="../Schemas/ES_TS_OrderManagement.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="CreateOrderRequest">
+    <wsdl:part element="xsd1:CreateOrderReq" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="CreateOrderResponse">
+    <wsdl:part element="xsd1:CreateOrderRes" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderRequest">
+  	<wsdl:part name="parameters" element="xsd1:UpdateOrderReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderResponse">
+  	<wsdl:part name="parameters" element="xsd1:UpdateOrderRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CancelOrderRequest">
+  	<wsdl:part name="parameters" element="xsd1:CancleOrderReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CancelOrderResponse">
+  	<wsdl:part name="parameters" element="xsd1:CancleOrderRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOrderRequest">
+  	<wsdl:part name="parameters" element="xsd1:GetOrderReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOrderResponse">
+  	<wsdl:part name="parameters" element="xsd1:GetOrderRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOrderHistoryRequest">
+  	<wsdl:part name="parameters" element="xsd1:GetAllHistoryReq"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetOrderHistoryResponse">
+  	<wsdl:part name="parameters" element="xsd1:GetOrderHistoryRes"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ES_TS_OrderManagement">
+    <wsdl:operation name="CreateOrder">
+      <wsdl:input message="tns:CreateOrderRequest"/>
+      <wsdl:output message="tns:CreateOrderResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrder">
+    	<wsdl:input message="tns:UpdateOrderRequest"></wsdl:input>
+    	<wsdl:output message="tns:UpdateOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelOrder">
+    	<wsdl:input message="tns:CancelOrderRequest"></wsdl:input>
+    	<wsdl:output message="tns:CancelOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+    	<wsdl:input message="tns:GetOrderRequest"></wsdl:input>
+    	<wsdl:output message="tns:GetOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderHistory">
+    	<wsdl:input message="tns:GetOrderHistoryRequest"></wsdl:input>
+    	<wsdl:output message="tns:GetOrderHistoryResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ES_TS_OrderManagementSOAP" type="tns:ES_TS_OrderManagement">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreateOrder">
+      <soap:operation soapAction="http://www.EniqueSolutions.com/BW6Training/ES_TS_OrderManagement/CreateOrder"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ES_TS_OrderManagement">
+    <wsdl:port binding="tns:ES_TS_OrderManagementSOAP" name="ES_TS_OrderManagementSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
