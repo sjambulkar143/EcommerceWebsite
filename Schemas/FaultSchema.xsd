@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FaultSchema" xmlns:tns="http://www.example.org/FaultSchema" elementFormDefault="qualified">
+
+    <complexType name="FaultSchemaType">
+    	<sequence>
+    		<element name="Msg" type="string"></element>
+    		<element name="MessageCode" type="string"></element>
+    		<element name="StackTrace" type="string"></element>
+    		<element name="ProcessName" type="string"></element>
+    		<element name="ProcessID" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="FaultSchema" type="tns:FaultSchemaType"></element>
+</schema>

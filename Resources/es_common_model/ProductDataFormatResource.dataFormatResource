@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ES_BS_ProductManagement="http://www.EniqueSolutions.com/BW6Training/ES_BS_ProductManagement" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_-Y748dT3Eeyb7psgl5aIqA" name="es_common_model.ProductDataFormatResource" type="dataformat:DataFormat">
+  <imports xmi:id="_8IsBUNwNEeyStfnawXocYQ" importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.EniqueSolutions.com/BW6Training/ES_BS_ProductManagement"/>
+  <jndi:configuration xsi:type="dataformat:DataFormat" xmi:id="_-ZFp8NT3Eeyb7psgl5aIqA" formatType="Delimiter separated" colSeparator="~" colSeparatorParseRule="Treat all characters as entered as a single column separator string" lineSeparator="Carriage Return/Line Feed (windows)" fillCharacter="Space" schemaElementQName="ES_BS_ProductManagement:GetTable" fieldOffsetsStr="TableName(0,0)&#xA;TableValues(0,0)&#xA;TableColumn(0,0)">
+    <fieldOffsets xmi:id="_8KYqcNwNEeyStfnawXocYQ" name="TableName"/>
+    <fieldOffsets xmi:id="_8KYqcdwNEeyStfnawXocYQ" name="TableValues"/>
+    <fieldOffsets xmi:id="_8KYqctwNEeyStfnawXocYQ" name="TableColumn"/>
+  </jndi:configuration>
+</jndi:namedResource>

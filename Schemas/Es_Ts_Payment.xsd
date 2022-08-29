@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.EniqueSolutions.com/BW6Training/Es_Ts_Payment" elementFormDefault="qualified" targetNamespace="http://www.EniqueSolutions.com/BW6Training/Es_Ts_Payment">
+      
+  <complexType name="MakePaymentReqType">
+        	
+    <sequence>
+
+            <element name="Product_ID" type="string"></element>
+            <element name="Amount" type="string" />
+
+    	<element name="AccountNumber" type="string" />
+
+    	<element name="ConfirmAccount_number" type="string" />
+
+    	<element name="IFSC" type="string" />
+
+    	<element name="Account_HolderName" type="string" />
+
+    </sequence>
+
+  </complexType>
+      
+    
+  <complexType name="MakePaymentResType">
+        	
+    <sequence>
+          		
+      <element name="ResponseMessage" type="string"/>
+          	
+    </sequence>
+        
+  </complexType>
+      
+    
+  <element name="MakePaymentReq" type="tns:MakePaymentReqType"/>
+      
+    
+  <element name="MakePaymentRes" type="tns:MakePaymentResType"/>
+  
+</schema>

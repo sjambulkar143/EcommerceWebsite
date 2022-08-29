@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.EniqueSolutions.com/BW6Training/ES_BS_ProductManagement" elementFormDefault="qualified" targetNamespace="http://www.EniqueSolutions.com/BW6Training/ES_BS_ProductManagement">
+        
+  
+  <element name="Product_ID" type="string"/>
+        
+  
+  <complexType name="UpdateProductType">
+            	
+    
+    <sequence>
+                		
+      
+      <element ref="tns:Product_ID"/>
+                	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+    
+  
+  <complexType name="DeleteProductType">
+            	
+    
+    <sequence>
+                		
+      
+      <element ref="tns:Product_ID"/>
+                	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+  
+  <element name="DeleteProduct" type="tns:DeleteProductType"/>
+        
+    
+  
+  <element name="UpdateProduct" type="tns:UpdateProductType"/>
+        
+      
+      
+  
+  <complexType name="GetProductByCategoryReqType">
+            	
+    
+    <sequence>
+                		
+      
+      <element ref="tns:Category_ID"/>
+                	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+    
+  
+  <complexType name="GetProductByCategoryResType">
+            	
+    
+    <sequence>
+                		
+      
+      <element ref="tns:Product_ID"/>
+                		
+      
+      <element ref="tns:Product_Name"/>
+                		
+      
+      <element ref="tns:Brand_ID"/>
+                		
+      
+      <element ref="tns:Model_Year"/>
+                		
+      
+      <element ref="tns:Category_ID"/>
+                		
+      
+      <element ref="tns:List_Price"/>
+                		
+      
+      <element ref="tns:ResponseMessage"/>
+                	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+    
+  
+  <element name="Product_Name" type="string"/>
+        
+  
+  <element name="Brand_ID" type="string"/>
+        
+  
+  <element name="Model_Year" type="string"/>
+        
+  
+  <element name="Category_ID" type="string"/>
+        
+  
+  <element name="List_Price" type="string"/>
+        
+  
+  <element name="ResponseMessage" type="string"/>
+        
+  
+  <complexType name="GetIndividualProductReqType">
+            	
+    
+    <sequence>
+                		
+      
+      <element ref="tns:Product_ID"/>
+                	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+  
+  <complexType name="GetIndividualProductResType">
+            	
+    
+    <sequence>
+          	
+      <element ref="tns:Product_ID"/>
+          	
+      <element ref="tns:Product_Name"/>
+          	
+      <element ref="tns:Brand_ID"/>
+          	
+      <element ref="tns:Model_Year"/>
+                  
+      <element ref="tns:Category_ID"/>
+                  
+      <element ref="tns:List_Price"/>
+          	
+      <element ref="tns:ResponseMessage"/>
+          
+    </sequence>
+      
+  </complexType>
+        
+  
+  <complexType name="GetAllProductsReqType">
+            	
+    
+    <sequence>
+                		
+      
+      <element name="GetAllProducts" type="string"/>
+                	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+  
+  <complexType name="GetAllProductsResType">
+            	
+    
+    <sequence>
+          	
+      <element maxOccurs="unbounded" minOccurs="1" ref="tns:GetAllProducts"/>
+          
+    </sequence>
+      
+  </complexType>
+        
+  
+  <element name="GetAllProductsReq" type="tns:GetAllProductsReqType">
+    </element>
+        
+  
+  <element name="GetAllProductsRes" type="tns:GetAllProductsResType">
+  </element>
+    
+  <element name="GetIndividualProductReq" type="tns:GetIndividualProductReqType">
+    </element>
+        
+  
+  <element name="GetIndividualProductRes" type="tns:GetIndividualProductResType">
+    </element>
+        
+    
+  
+  <element name="GetProductByCategoryReq" type="tns:GetProductByCategoryReqType">
+    </element>
+        
+  
+  <element name="GetProductByCategoryRes" type="tns:GetProductByCategoryResType">
+    </element>
+        
+  
+  <complexType name="AddIndividualProductResType">
+            	
+    
+    <sequence>
+                		
+      
+      <element ref="tns:ResponseMessage"/>
+                	
+    
+    </sequence>
+            
+  
+  </complexType>
+        
+  
+  <element name="AddIndividualProductReq" type="tns:AddIndividualProductReqType">
+  </element>
+    
+  <element name="AddIndividualProductRes" type="tns:AddIndividualProductResType">
+    </element>
+    
+
+
+
+  
+  <complexType name="GetAllProducts">
+      	
+    <sequence>
+        		
+      <element ref="tns:Product_ID"/>
+        		
+      <element ref="tns:Product_Name"/>
+        		
+      <element ref="tns:Brand_ID"/>
+        		
+      <element ref="tns:Model_Year"/>
+        		
+      <element ref="tns:Category_ID"/>
+        		
+      <element ref="tns:List_Price"/>
+        		
+      <element ref="tns:ResponseMessage"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <element name="GetAllProducts" type="tns:GetAllProducts"/>
+    
+  <complexType name="AddIndividualProductReqType">
+      	
+    <sequence>
+        		
+      <element ref="tns:Product_ID"/>
+        		
+      <element ref="tns:Product_Name"/>
+        		
+      <element ref="tns:Brand_ID"/>
+        		
+      <element ref="tns:Model_Year"/>
+        		
+      <element ref="tns:Category_ID"/>
+        		
+      <element ref="tns:List_Price"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <complexType name="GetTablesType">
+      	
+    <sequence>
+        		
+      <element maxOccurs="1" minOccurs="0" name="TableName" type="string">
+  		</element>
+        		
+      <element maxOccurs="1" minOccurs="0" name="TableValues" type="string">
+  		</element>
+        		
+      <element maxOccurs="1" minOccurs="0" name="TableColumn" type="string"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <element name="GetTable" type="tns:GetTablesType"/>
+    
+  <complexType name="AddProductsReqType">
+      	
+    <sequence>
+        		
+      <element name="FileLocation" type="string"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <complexType name="AddProductsResType">
+      	
+    <sequence>
+        		
+      <element ref="tns:ResponseMessage"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <element name="AddProductsReq" type="tns:AddProductsReqType"/>
+    
+  <element name="AddProductsRes" type="tns:AddIndividualProductResType">
+  </element>
+    
+  <complexType name="UpdateDataFormatType">
+      	
+    <sequence>
+        		
+      <element ref="tns:Product_ID"/>
+        		
+      <element ref="tns:Product_Name"/>
+        		
+      <element ref="tns:Brand_ID"/>
+        		
+      <element ref="tns:Model_Year"/>
+        		
+      <element ref="tns:Category_ID"/>
+        		
+      <element ref="tns:List_Price"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <element name="UpdateDataFormat" type="tns:UpdateDataFormatType"/>
+    
+  <complexType name="DeleteDataFormat">
+      	
+    <sequence>
+        		
+      <element ref="tns:Product_ID"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <complexType name="DeleteDataFormatType">
+      	
+    <sequence>
+        		
+      <element name="DeleteData" type="tns:DeleteDataFormat"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <element name="DeleteDataFormatType" type="tns:DeleteDataFormatType">
+  </element>
+    
+  <complexType name="UpdateProductResType">
+      	
+    <sequence>
+        		
+      <element ref="tns:ResponseMessage"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <complexType name="DeleteProductResType">
+      	
+    <sequence>
+        		
+      <element ref="tns:ResponseMessage"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+
+  
+  <element name="DeleteProductRes" type="tns:DeleteProductResType"/>
+    
+  <element name="UpdateProductRes" type="tns:UpdateProductResType"/>
+      
+  <element name="operationRequest">
+    <complexType>
+      <sequence>
+        <element name="in" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+      
+  <element name="operationResponse">
+    <complexType>
+      <sequence>
+        <element name="out" type="string"/>
+      </sequence>
+    </complexType>
+  </element>
+  
+</schema>

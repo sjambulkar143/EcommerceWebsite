@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.EniqueSolutions.com/BW6Training/ECommerce" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.EniqueSolutions.com/BW6Training/ECommerce">
+
+  
+  <element name="CUSTOMER_ID" type="string"/>
+            
+  
+  
+  
+  <element name="PRODUCT_ID" type="string"/>
+            
+  
+  
+  
+            
+  
+  
+  
+  <element name="CATEGORY_ID" type="string"/>
+            
+  
+  
+  
+  <element name="Products" type="string"/>
+            
+  
+  
+  
+  <complexType name="OrdersType">
+                    	
+    
+    
+    
+    <sequence>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="1" name="ORDER_ID" type="string"/>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="0" ref="tns:CUSTOMER_ID"/>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="1" ref="tns:PRODUCT_ID"/>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="1" name="QUANTITY" type="int"/>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="1" name="LIST_PRICE" type="int"/>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="1" name="DISCOUNT" type="int"/>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="1" name="ORDER_STATUS" type="int"/>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="1" name="ORDER_DATE" type="string"/>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="1" name="REQUIRED_DATE" type="string"/>
+                            		
+      
+      
+      
+      <element maxOccurs="1" minOccurs="0" name="SHIPPED_DATE" type="string"/>
+                            	
+    
+    
+    
+    </sequence>
+                    
+  
+  
+  
+  </complexType>
+            
+      
+  
+  
+  
+  <element name="Categories" type="tns:CategoriesType"/>
+        
+  
+  
+  <element name="LoginReq" type="tns:LoginReqType"/>
+            
+
+    
+  
+  
+  
+  <element name="LogoutReq" type="tns:LogoutReqType"/>
+            
+    
+  
+  
+  
+  <complexType name="LoginReqType">
+                    	
+    
+    
+    
+    <sequence>
+                      	
+      
+      
+      <element name="CustomerID" type="string"/>
+                      	
+      
+      
+      <element name="Password">
+              	
+        <simpleType>
+                		
+          <restriction base="string">
+                  			
+            <minLength value="8"/>
+                  			
+            <maxLength value="12"/>
+                  		
+          </restriction>
+                	
+        </simpleType>
+              
+      </element>
+          
+    </sequence>
+              
+  
+  
+  </complexType>
+            
+    
+  
+  
+  
+  <complexType name="LogoutReqType">
+                    	
+    
+    
+    
+    <sequence>
+                      	
+      
+                	
+      
+      
+      <element name="SessionID" type="string"/>
+                      
+    
+    
+    </sequence>
+              
+  
+  
+  </complexType>
+            
+  
+  
+  
+  <complexType name="CreateSessionsReqType">
+                    	
+    
+    
+    
+    <sequence>
+                              
+      
+      
+      <element name="UserName" type="string"/>
+                              
+      
+      
+      <element name="Password" type="string"/>
+                      	
+          	
+      
+      
+                      
+    
+    
+    </sequence>
+              
+  
+  
+  </complexType>
+        
+
+  
+  
+  
+  <complexType name="LoginResType">
+              	
+    
+    
+    <sequence>
+
+
+
+    	<element name="CustomerID" type="string" />
+
+
+
+
+
+
+            <element name="SessionID" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="ResponseMessage" type="string" />
+
+
+
+    </sequence>
+
+
+
+  </complexType>
+        
+  
+  
+  <element name="LoginRes" type="tns:LoginResType"/>
+        
+  
+  
+  <complexType name="LogoutResType">
+              	
+    
+    
+    <sequence>
+                    		
+      
+              		
+      
+      
+      <element name="ResponseMessage" type="string"/>
+                    	
+    
+    
+    </sequence>
+              
+  
+  
+  </complexType>
+        
+  
+  
+  <element name="LogoutRes" type="tns:LogoutResType"/>
+        
+  
+  
+  <element name="CreateSessionsReq" type="tns:CreateSessionsReqType"/>
+        
+  
+  
+  <complexType name="CreateSessionsResType">
+              	
+    
+    
+    <sequence>
+
+
+    	<element name="Username" type="string" />
+
+
+    	<element name="SessionID" type="string" />
+
+
+    	<element name="Timestamp" type="string" />
+
+
+            <element name="Status" type="string"></element>
+            <element name="ResponseMessage" type="string" />
+
+
+    </sequence>
+
+
+  </complexType>
+        
+  
+  
+  <complexType name="CategoriesType">
+              	
+    
+    
+    <sequence>
+                    		
+      
+      
+      <element maxOccurs="1" minOccurs="1" ref="tns:CATEGORY_ID"/>
+                    		
+      
+      
+      <element maxOccurs="1" minOccurs="1" name="CATEGORY_NAME" type="string"/>
+                    	
+    
+    
+    </sequence>
+              
+  
+  
+  </complexType>
+        
+  
+  
+  <complexType name="ValidateSessionReqType">
+              	
+    
+    
+    <sequence>
+
+
+
+    	<element name="UserName" type="string" maxOccurs="1" minOccurs="0"/>
+
+
+
+
+
+
+            <element name="CustomerID" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="SessionID" type="string" />
+
+
+
+    </sequence>
+
+
+
+  </complexType>
+        
+  
+  
+  <complexType name="ValidateSessionResType">
+              	
+    
+    
+    <sequence>
+
+
+
+    	<element name="UserName" type="string" maxOccurs="1"
+    		minOccurs="0" />
+
+
+
+    	<element name="SessionID" type="string" />
+
+
+
+            <element name="CustomerID" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="ResponseMessage" type="string" />
+
+
+
+    </sequence>
+
+
+
+  </complexType>
+        
+  
+  
+  <element name="ValidateSessionReq" type="tns:ValidateSessionReqType">
+  </element>
+        
+  
+  
+  <element name="ValidateSessionRes" type="tns:ValidateSessionResType">
+  </element>
+          
+  
+  
+  <complexType name="LoginResArray">
+            
+    
+    <sequence>
+                  
+      
+      <element maxOccurs="unbounded" minOccurs="0" name="LoginRes" type="tns:LoginResType"/>
+                
+    
+    </sequence>
+          
+  
+  </complexType>
+          
+  
+  
+  <element name="LoginResArray" type="tns:LoginResArray"/>
+      
+
+
+  
+  
+  <element name="CreateSessionRes" type="tns:CreateSessionsResType"/>
+      
+  
+  <complexType name="CreateAccountReqType">
+          	
+    
+    <sequence>
+
+
+    	<element maxOccurs="1" minOccurs="1" name="FirstName"
+    		type="string">
+    	</element>
+
+
+    	<element name="LastName" type="string" />
+
+
+    	<element name="CustomerID" type="string" />
+
+
+            <element name="SessionID" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element maxOccurs="1" minOccurs="1" name="Username"
+    		type="string">
+    	</element>
+
+
+    	<element maxOccurs="1" minOccurs="1" name="Password"
+    		type="string">
+
+    	</element>
+
+
+    	<element name="ReenterPassword" type="string" />
+
+
+    	<element maxOccurs="1" minOccurs="1" name="Phone">
+
+
+    		<simpleType>
+
+
+    			<restriction base="string">
+
+
+    				<pattern value="[0-9]{10}" />
+
+
+    			</restriction>
+
+
+    		</simpleType>
+
+
+    	</element>
+
+
+    	<element maxOccurs="1" minOccurs="0" name="Email"
+    		type="string">
+
+    	</element>
+
+
+    	<element name="Street" type="string" />
+
+
+    	<element name="City" type="string" />
+
+
+    	<element name="State" type="string" />
+
+
+    	<element name="ZipCode" type="string" />
+
+
+    </sequence>
+
+
+  </complexType>
+      
+  
+  <element name="CreateAccountReq" type="tns:CreateAccountReqType"/>
+      
+  
+  <complexType name="CreateAccountResType">
+          	
+    
+    <sequence>
+              		
+      
+      <element name="Username" type="string"/>
+              		
+      
+      <element name="Password" type="string"/>
+              		
+      
+      <element name="ResponseMessage" type="string"/>
+              	
+    
+    </sequence>
+          
+  
+  </complexType>
+      
+  
+  <element name="CreateAccountRes" type="tns:CreateAccountResType"/>
+      
+  
+  <complexType name="UpdateAccountReqType">
+          	
+    
+    <sequence>
+          	
+      <element name="FirstName" type="string"/>
+          	
+      <element name="LastName" type="string"/>
+          	
+      <element name="CustomerID" type="string"/>
+          	
+      <element name="UserName" type="string"/>
+          	
+      <element name="Password" type="string"/>
+          	
+      <element name="Phone">
+            		
+        <simpleType>
+              			
+          <restriction base="string">
+                				
+            <pattern value="[0-9]{10}"/>
+                			
+          </restriction>
+              		
+        </simpleType>
+            	
+      </element>
+          	
+      <element name="Email" type="string"/>
+          	
+      <element name="Street" type="string"/>
+          	
+      <element name="City" type="string"/>
+          	
+      <element name="State" type="string"/>
+          	
+      <element name="ZipCode" type="string"/>
+          
+    </sequence>
+      
+  </complexType>
+      
+  
+  <complexType name="BankAccountDetalsType">
+          	
+    
+    <sequence>
+              		
+      
+      <element name="BankName" type="string"/>
+              		
+      
+      <element name="AccountNumber" type="string"/>
+              		
+      
+      <element name="IFSC" type="string"/>
+              	
+    
+    </sequence>
+          
+  
+  </complexType>
+      
+  
+  <element name="UpdateAccountReq" type="tns:UpdateAccountReqType"/>
+      
+  
+  <complexType name="UpdateAccountResType">
+          	
+    
+    <sequence>
+              		
+      
+      <element name="ResponseMessage" type="string"/>
+              		
+      
+      <element name="SessionID" type="string"/>
+              	
+    
+    </sequence>
+          
+  
+  </complexType>
+      
+  
+  <element name="UpdateAccountRes" type="tns:UpdateAccountResType"/>
+      
+  
+  <complexType name="GetAccountResType">
+          	
+    
+    <sequence>
+          	
+      <element name="FirstName" type="string"/>
+          	
+      <element name="LastName" type="string"/>
+          	
+      <element name="CustomerID" type="string"/>
+          	
+      <element name="UserName" type="string"/>
+          	
+      <element name="Password" type="string"/>
+          	
+      <element name="Phone" type="string"/>
+          	
+      <element name="Email" type="string"/>
+          	
+      <element name="Street" type="string"/>
+          	
+      <element name="City" type="string"/>
+          	
+      <element name="State" type="string"/>
+          	
+      <element name="ZipCode" type="string">
+
+    	</element>
+          	
+      <element name="ResponseMessage" type="string"/>
+          
+    </sequence>
+      
+  </complexType>
+    
+
+
+  
+  <element name="GetAccountRes" type="tns:GetAccountResType"/>
+    
+  <complexType name="AddressType">
+      	
+    <sequence>
+        		
+      <element name="Street" type="string"/>
+        		
+      <element name="City" type="string"/>
+        		
+      <element name="State" type="string"/>
+        		
+      <element name="ZipCode">
+          			
+        <simpleType>
+            				
+          <restriction base="string">
+              					
+            <pattern value="[0-9]{6}"/>
+              				
+          </restriction>
+            			
+        </simpleType>
+          		
+      </element>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <complexType name="GetAccountReqType">
+      	
+    <sequence>
+
+    	<element name="CustomerID" type="string" />
+
+    	<element name="SessionID" type="string" maxOccurs="1" minOccurs="0"></element>
+    </sequence>
+
+  </complexType>
+    
+  <element name="GetAccountDetailReq" type="tns:GetAccountReqType"/>
+    
+  <complexType name="DeactiveAccountReqType">
+      	
+    <sequence>
+        		
+      <element name="CustomerID" type="string"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <complexType name="Products">
+      	
+    <sequence>
+        		
+      <element name="ResponseMessage" type="string"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <element name="DeactiveAccountReq" type="tns:DeactiveAccountReqType">
+  </element>
+    
+  <element name="DeactiveAccountRes" type="tns:Products">
+  </element>
+  
+
+
+
+  <complexType name="UpdateProductsType">
+  	<sequence>
+  		<element name="Product_ID" type="string"></element>
+  	</sequence>
+  </complexType>
+
+  <element name="UpdateProduct" type="tns:UpdateProductsType"></element>
+</schema>
